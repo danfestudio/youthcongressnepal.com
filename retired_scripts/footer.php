@@ -68,4 +68,4 @@
 
 				</div>
 			</div><!-- #copyrights end -->
-		</footer><!-- #footer end -->
+</footer><!-- #footer end -->
