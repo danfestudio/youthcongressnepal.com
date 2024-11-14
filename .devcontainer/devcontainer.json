@@ -1,5 +1,13 @@
 {
 	"name": "youthcongressnepal",
 	"image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
-	"remoteUser": "root"
+	"remoteUser": "root",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	}
 }

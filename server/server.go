@@ -1,17 +1,68 @@
 package server
 
 import (
-	"fmt"
+	"html/template"
+	"log"
 	"net/http"
+	"path/filepath"
 )
 
-func StartServer(port string) {
-	fileServer := http.FileServer(http.Dir("./public"))
-	http.Handle("/", fileServer)
-
-	fmt.Printf("Serving files from ./public on port %s\n", port)
-	err := http.ListenAndServe(":"+port, nil)
+// renderPage loads templates and renders a specific page
+func renderPage(w http.ResponseWriter, pagePath string) {
+	// Load templates from /public/templates directory
+	templateFiles, err := filepath.Glob("public/templates/*.html")
 	if err != nil {
-		fmt.Printf("Error starting server: %s\n", err)
+		http.Error(w, "Unable to load templates", http.StatusInternalServerError)
+		log.Println("Error loading templates:", err)
+		return
+	}
+
+	// Include the specific page template
+	templateFiles = append(templateFiles, pagePath)
+
+	// Parse all templates
+	tmpl, err := template.ParseFiles(templateFiles...)
+	if err != nil {
+		http.Error(w, "Error parsing templates", http.StatusInternalServerError)
+		log.Println("Error parsing templates:", err)
+		return
+	}
+
+	// Execute the template
+	err = tmpl.ExecuteTemplate(w, filepath.Base(pagePath), nil)
+	if err != nil {
+		http.Error(w, "Error executing template", http.StatusInternalServerError)
+		log.Println("Error executing template:", err)
+	}
+}
+
+// pageHandler returns a handler function for rendering a specified page
+func pageHandler(page string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/" && r.URL.Path != page {
+			http.NotFound(w, r)
+			return
+		}
+		renderPage(w, "public" + page + ".html")
+	}
+}
+
+// SetupRoutes configures URL routes
+func SetupRoutes() {
+	// Serve static files (CSS, JS, images) from /public/static directory
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./public/static"))))
+
+	// Register route handlers
+	http.HandleFunc("/", pageHandler("/index"))
+	http.HandleFunc("/about", pageHandler("/about"))
+	http.HandleFunc("/central-committee", pageHandler("/central-committee"))
+}
+
+// StartServer launches the HTTP server on the specified port
+func StartServer(port string) {
+	SetupRoutes()
+	log.Println("Server starting on port", port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		log.Fatal("Server failed:", err)
 	}
 }
