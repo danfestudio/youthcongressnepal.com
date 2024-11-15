@@ -1,23 +1,22 @@
-# Use the base image as defined in your devcontainer
+# Use Go base image
 FROM mcr.microsoft.com/devcontainers/go:1-1.23-bookworm
 
-# Set the working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy go.mod and go.sum first (if you have them)
-# This helps to cache dependencies if they haven't changed
+# Copy go.mod and go.sum files if they exist (skip if not using Go modules)
 COPY go.mod go.sum ./
+RUN go mod tidy || true  
 
-# Download dependencies
-RUN go mod tidy
+# Run this if you have Go modules, else it will be skipped
 
-# Copy the rest of the application files
+# Copy the entire project
 COPY . .
 
 # Build the Go application
-RUN go build -o main main.go
+RUN go build -o main .
 
-# Expose the port your application listens on (adjust if necessary)
+# Expose the application port
 EXPOSE 8081
 
 # Command to run the application
