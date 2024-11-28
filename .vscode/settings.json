@@ -2,6 +2,8 @@
     "editor.fontFamily": "'Fira Code'",
     "material-icon-theme.folders.associations": {
         "retired_scripts": "php"       
-    }
+    },
+    "editor.acceptSuggestionOnEnter": "on",
+    "pieces.autocomplete": true
 }
 
