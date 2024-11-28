@@ -9,6 +9,9 @@ import (
 
 // renderPage loads templates and renders a specific page
 func renderPage(w http.ResponseWriter, pagePath string) {
+	// Set the Content-Type to text/html to ensure the browser interprets it as HTML
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
 	// Load templates from /public/templates directory
 	templateFiles, err := filepath.Glob("public/templates/*.html")
 	if err != nil {
@@ -56,6 +59,16 @@ func SetupRoutes() {
 	http.HandleFunc("/", pageHandler("/index"))
 	http.HandleFunc("/about", pageHandler("/about"))
 	http.HandleFunc("/central-committee", pageHandler("/central-committee"))
+	http.HandleFunc("/standing-rules", pageHandler("/standing-rules"))
+	http.HandleFunc("/contact", pageHandler("/contact"))
+	http.HandleFunc("/blog", pageHandler("/blog"))
+	http.HandleFunc("/faqs", pageHandler("/faqs"))
+	http.HandleFunc("/activities", pageHandler("/activities"))
+	http.HandleFunc("/philanthropy-activities", pageHandler("/philanthropy-activities"))
+	http.HandleFunc("/basics-of-politics", pageHandler("/basics-of-politics"))
+	http.HandleFunc("/know-your-country", pageHandler("/know-your-country"))
+
+	
 }
 
 // StartServer launches the HTTP server on the specified port
