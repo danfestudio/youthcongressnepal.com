@@ -46,7 +46,7 @@ func pageHandler(page string) http.HandlerFunc {
 			http.NotFound(w, r)
 			return
 		}
-		renderPage(w, "public" + page + ".html")
+		renderPage(w, "public"+page+".html")
 	}
 }
 
@@ -67,15 +67,14 @@ func SetupRoutes() {
 	http.HandleFunc("/philanthropy-activities", pageHandler("/philanthropy-activities"))
 	http.HandleFunc("/basics-of-politics", pageHandler("/basics-of-politics"))
 	http.HandleFunc("/know-your-country", pageHandler("/know-your-country"))
-
-	
 }
 
 // StartServer launches the HTTP server on the specified port
 func StartServer(port string) {
 	SetupRoutes()
 	log.Println("Server starting on port", port)
-	if err := http.ListenAndServe(":"+port, nil); err != nil {
+	// Listen on all available network interfaces (IPv4 and IPv6) on the specified port
+	if err := http.ListenAndServe("0.0.0.0:"+port, nil); err != nil {
 		log.Fatal("Server failed:", err)
 	}
 }
