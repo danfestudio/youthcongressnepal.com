@@ -22,8 +22,8 @@ func HttpServer() {
 
     http.HandleFunc("/register", registerHandler)
 
-    log.Println("Listening on :8080...")
-    err := http.ListenAndServe(":8080", nil)
+    log.Println("Listening on :8003...")
+    err := http.ListenAndServe(":8003", nil)
     if err != nil {
         log.Fatal(err)
     }
