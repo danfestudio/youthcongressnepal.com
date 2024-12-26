@@ -1,0 +1,15 @@
+{
+    "name": "dbms",	
+    "image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+    "remoteUser": "root",
+    "postCreateCommand": "/bin/sh /workspaces/dbms/.devcontainer/setup.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mechatroner.rainbow-csv",
+                "golang.go",
+                "qwtel.sqlite-viewer"
+            ]
+        }
+    }
+}
