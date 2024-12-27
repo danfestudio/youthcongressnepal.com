@@ -24,8 +24,8 @@ jobs:
           port: 22
 
           script: |
-            cd /home/cb/projects/auth.youthcongressnepal.com || exit 1            
-            docker build -t youthcongressnepalauth .
-            docker stop auth.youthcongressnepal.com || true
-            docker rm auth.youthcongressnepal.com || true
-            docker run -d --name auth.youthcongressnepal.com -p 8003:8003 youthcongressnepalauth
+            cd /home/cb/projects/youthcongress.org.np || exit 1            
+            docker build -t youthcongressnepal .
+            docker stop youthcongress.org.np || true
+            docker rm youthcongress.org.np || true
+            docker run -d --name youthcongress.org.np -p 8003:8003 youthcongressnepal

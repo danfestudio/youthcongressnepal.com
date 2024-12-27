@@ -1,5 +1,3 @@
-module github.com/chetanbudathoki/dbms
+module github.com/danfestudio/youthcongress.org.np
 
 go 1.22.10
-
-require github.com/lib/pq v1.10.9
