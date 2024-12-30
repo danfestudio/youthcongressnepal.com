@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<div data-include="templates/head.html"></div>
+
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<div data-include="templates/header.html"></div>
+		
+		<section id="page-title" class="page-title-pattern">
+
+			<div class="container clearfix">
+				<h1 style="color:white;">Our Philanthropy Activities</h1>
+			</div>
+
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap-2" >
+				
+
+				</div>
+
+				<div class="container clearfix">
+
+				
+
+					
+
+					<div class="fancy-title title-border" style="padding-top:50px;">
+						<h3>Philanthropy Activities</h3>
+					</div>
+
+					<div class="row">
+
+						<div class="entry event col-12">
+							<div class="grid-inner row align-items-center no-gutters p-4">
+								<div class="entry-image col-md-4 mb-md-0">
+									<a href="#">
+										<img src="images/YouthCongressNepal-PhilanthropyActivities.jpg" alt="">
+										
+									</a>
+								</div>
+								<div class="col-md-8 pl-md-4">
+									<div class="entry-title title-sm">
+										<h2><a href=""> आगाेलागी बाट पिडित निरुता भण्डाराकाे उपचारमा सहयोग</a></h2>
+									</div>
+									
+									<div class="entry-content">
+										<p>
+										आगोलागिबाट पीडित  कैलाली जिल्ला मा बसोबास गर्दै आई रहनुभएको निरुता भन्डारालाई  क्रितिम खुट्टा हाल्न, यूथ कांग्रेस नेपालको संयोजकत्वमा संकलित रकम (रु ४०,०००) आज हस्तान्तरण गरिएको छ। 
+										</p>
+										<a href="" class="btn btn-danger">Read More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="entry event col-12">
+							<div class="grid-inner row align-items-center no-gutters p-4">
+								<div class="entry-image col-md-4 mb-md-0">
+									<a href="#">
+										<img src="images/YouthCongressNepal-PhilanthropyActivities-3.jpg" alt="">
+										
+									</a>
+								</div>
+								<div class="col-md-8 pl-md-4">
+									<div class="entry-title title-sm">
+										<h2><a href="">मृगौला फेल भएका तिल बहादुर गुरुङलाई उपचार खर्च सहयोग</a></h2>
+									</div>
+									
+									<div class="entry-content">
+										<p>
+                                        पाँचथर जिल्ला झारसाँदी निवासी तिल बहादुर गुरुङकाे दुवै मृगौला फेल भइ उपचार गरिरहेका छन्। निजको आर्थिक अवस्था कमजोर रहेका कारण , उहाँको उपचारका निम्ति युथ कांग्रेस नेपालले आज रु १०,०११ हस्तान्तरण गरेको छ।
+                                    </p>
+										<a href="" class="btn btn-danger">Read More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="entry event col-12">
+							<div class="grid-inner row align-items-center no-gutters p-4">
+								<div class="entry-image col-md-4 mb-md-0">
+									<a href="#">
+										<img src="images/YouthCongressNepal-PhilanthropyActivities-2.jpg" alt="Nemo quaerat nam beatae iusto minima vel">
+										
+									</a>
+								</div>
+								<div class="col-md-8 pl-md-4">
+									<div class="entry-title title-sm">
+										<h2><a href="">BOOKS AND STATIONERY DISTRIBUTION PROGRAM</a></h2>
+									</div>
+									
+									<div class="entry-content">
+										<p>In any crisis, especially in the current pandemic, the citizens expect utmost honesty, efficiency, planning and transparency from the government. Lack of proper plans to cap the mounting cases of Covid- 19, smell of corruption in the government’s hands and other unjustifiable comments put by the ruling government and NCP co-chairman, led to a youth-led street protest ‘Enough is Enough’ in Kathmandu which snowballed nationally. YCon, having one of its major objectives to be a watchdog of the government activities to ensure good governance, actively participated in the protest.</p>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+
+				</div>
+
+			
+			</div>
+		</section><!-- #content end -->
+
+		
+		<div data-include="templates/footer.html"></div>
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/jquery.calendario.js"></script>
+	<script src="js/events-data.js"></script>
+									
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+	<script src="static/js/include-html.js"></script>
+
+	<script>
+
+		jQuery(window).on( 'load', function(){
+
+			let $container = $('#posts');
+
+			function blogTimelineEntries() {
+				$('.post-timeline').find('.entry:not(.entry-date-section)').each( function(){
+					let position = $(this).position();
+					if( position.left === 0 ) {
+						$(this).removeClass('alt');
+					} else {
+						$(this).addClass('alt');
+					}
+					$(this).find('.entry-timeline').fadeIn();
+				});
+
+				$('.entry.entry-date-section').next().next().find('.entry-timeline').css({ 'top': '70px' });
+			}
+
+			$container.on( 'layoutComplete', function() {
+				blogTimelineEntries();
+			});
+
+			$(window).resize(function() {
+				$container.isotope('layout');
+				setTimeout( function(){
+					blogTimelineEntries();
+				}, 2500 );
+			});
+
+		});
+
+	</script>
+
+</body>
+</html>

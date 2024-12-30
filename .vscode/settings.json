@@ -1,0 +1,5 @@
+{
+    "material-icon-theme.folders.associations": {
+        "retired": "Theme"  // Replace "my-folder" with your folder name and "src" with the desired icon name
+    }
+}

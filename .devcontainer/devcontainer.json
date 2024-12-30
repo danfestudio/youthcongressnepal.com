@@ -2,13 +2,11 @@
     "name": "youthcongress.org.np",	
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "remoteUser": "root",
-    "postCreateCommand": "/bin/sh /workspaces/auth.youthcongressnepal.com/.devcontainer/setup.sh",
+    "postCreateCommand": "/bin/sh /workspaces/youthcongress.org.np/.devcontainer/setup.sh",
     "customizations": {
         "vscode": {
-            "extensions": [
-                "mechatroner.rainbow-csv",
-                "golang.go",
-                "qwtel.sqlite-viewer"
+            "extensions": [                
+                "golang.go"                
             ]
         }
     }
