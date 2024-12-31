@@ -6,6 +6,6 @@ import (
 )
 
 func main(){
-	database.Connection()
-	server.StartServer()
+	database.Connection()	
+	server.StartServer()	
 }

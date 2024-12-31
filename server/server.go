@@ -4,11 +4,19 @@ package server
 import (
 	"log"
 
+	"github.com/danfestudio/youthcongress.org.np/database"
 	"github.com/gofiber/fiber/v2"
 )
 
 // StartServer initializes and starts the Fiber server
-func StartServer() {
+func StartServer() {	
+	// Initialize database connection
+	database.Connection()
+	defer database.Close()
+
+	// Ensure the `members` table exists
+	database.CreateMemberTable(database.DB)
+
 	// Create a new Fiber app
 	app := fiber.New()
 
@@ -16,6 +24,9 @@ func StartServer() {
 	app.Static("/", "./public")
 
 	// Register routes
+	urlRoutes(app)
+
+	// Register application routes
 	RegisterRoutes(app)
 
 	// Start the server

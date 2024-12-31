@@ -20,4 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load head, header, and footer templates    
     loadTemplate("header", "/templates/header.html");
     loadTemplate("footer", "/templates/footer.html");
+    loadTemplate("head", "/templates/head.html");
 });

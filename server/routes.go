@@ -5,17 +5,20 @@ import (
 	"log"
 	"os"
 
+	"github.com/danfestudio/youthcongress.org.np/database"
 	"github.com/gofiber/fiber/v2"
 )
 
 // RegisterRoutes defines all the routes in one place
-func RegisterRoutes(app *fiber.App) {
+func urlRoutes(app *fiber.App) {
 	// Define routes mapping to their respective HTML files
 	routes := map[string]string{
 		"/":        			"./public/index.html",
 		"/about":   			"./public/about.html",
+		"/faqs":   				"./public/faqs.html",
 		"/contact": 			"./public/contact.html",
 		"/central-committee": 	"./public/central-committee.html",
+		"/registration": 		"./public/registration.html",
 	}
 
 	// Loop through the routes and register them
@@ -35,3 +38,17 @@ func RegisterRoutes(app *fiber.App) {
 		}(file))
 	}
 }
+
+// RegisterRoutes defines all the routes for the application
+func RegisterRoutes(app *fiber.App) {
+	// Handle form submission for registration
+	app.Post("/register", database.HandleRegistration)
+
+	// Serve the congratulations page
+	app.Get("/congratulations", func(c *fiber.Ctx) error {
+		return c.SendFile("./public/congratulations.html")
+	})
+
+	// Additional routes can be added here...
+}
+
