@@ -1,7 +1,7 @@
 # Stage 1: Build
 FROM golang:1.20-alpine AS builder
 
-# Install necessary packages
+# Install necessary tools
 RUN apk add --no-cache git
 
 # Set the working directory
@@ -13,13 +13,13 @@ COPY go.mod go.sum ./
 # Download dependencies
 RUN go mod download
 
-# Copy the source code
+# Copy the entire source code to the working directory
 COPY . .
 
 # Build the application
 RUN go build -o main .
 
-# Stage 2: Run
+# Stage 2: Create a minimal runtime image
 FROM alpine:latest
 
 # Install necessary libraries

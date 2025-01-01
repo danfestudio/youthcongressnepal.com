@@ -1,6 +1,6 @@
 module github.com/danfestudio/youthcongress.org.np
 
-go 1.22.10
+go 1.20
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.5
