@@ -135,3 +135,27 @@ function setupCascadingLogic(data, districtDropdown, palikaDropdown, wardDropdow
         }
     });
 }
+
+function validateForm() {
+    const requiredFields = [
+        'first_name',
+        'last_name',
+        'email_id',
+        'mobile_number',
+        'gender',
+        'blood_group',
+        'dob',
+        'permanent_district',
+        'permanent_palika',
+        'permanent_wada'
+    ];
+
+    for (const field of requiredFields) {
+        const element = document.getElementById(field);
+        if (!element || !element.value.trim()) {
+            alert(`Please fill in the ${field.replace('_', ' ')}`);
+            return false;
+        }
+    }
+    return true;
+}
