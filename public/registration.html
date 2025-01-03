@@ -128,7 +128,13 @@
 
 								<div class="col-3 form-group">
 									<label for="dob">Date of Birth (AD):</label>
-									<input type="date" id="dob" name="dob" class="form-control" required>
+									<input type="date" 
+										id="dob" 
+										name="dob" 
+										class="form-control" 
+										required
+										max="" 
+										onchange="validateAge(this)">
 								</div>
 															
 								<div class="divider divider-border divider-center"><i class="icon-location"></i></div>
@@ -259,7 +265,7 @@
 	============================================= -->
 	<script src="js/functions.js"></script>
 	<script src="js/include-html.js"></script>
-	<script src="js/location.js"></script>
+	<script src="js/location.js"></script>	
 
 </body>
 </html>

@@ -159,3 +159,30 @@ function validateForm() {
     }
     return true;
 }
+
+// Set max date to 18 years ago from today
+function setMaxDate() {
+    var today = new Date();
+    var maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+    document.getElementById('dob').max = maxDate.toISOString().split('T')[0];
+}
+
+// Validate age when date is changed
+function validateAge(input) {
+    var selectedDate = new Date(input.value);
+    var today = new Date();
+    var age = today.getFullYear() - selectedDate.getFullYear();
+    var monthDiff = today.getMonth() - selectedDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < selectedDate.getDate())) {
+        age--;
+    }
+    
+    if (age < 18) {
+        alert('You must be at least 18 years old to register.');
+        input.value = '';
+    }
+}
+
+// Set max date when page loads
+setMaxDate();

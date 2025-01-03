@@ -5,8 +5,9 @@
     "postCreateCommand": "/bin/sh /workspaces/youthcongress.org.np/.devcontainer/setup.sh",
     "customizations": {
         "vscode": {
-            "extensions": [                
-                "golang.go"                
+            "extensions": [
+                "golang.go"
+                
             ]
         }
     }
