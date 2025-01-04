@@ -12,5 +12,8 @@ WORKDIR /app
 COPY --from=builder /app/main .
 COPY --from=builder /app/public ./public
 RUN apk add --no-cache ca-certificates
+
+RUN curl --create-dirs -o /app/root.crt 'https://cockroachlabs.cloud/clusters/1b394f99-bc6c-4179-bd90-2af47fd66103/cert'
+
 EXPOSE 8001
 CMD ["./main"]
