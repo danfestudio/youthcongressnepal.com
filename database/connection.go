@@ -13,7 +13,7 @@ var DB *sql.DB
 // Connect initializes the database connection and assigns it to the global DB variable
 func Connection() {
 	// Define your connection string
-	connStr := "postgresql://youthcongressnepal:K0A4IsjH4s15z6pLOIyuAw@chetanbudathoki-7078.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/youthcongressnepal?sslmode=verify-full&sslrootcert=/app/root.crt"
+	connStr := "postgresql://chetanbudathoki:Online248@161.97.141.69:26257/youthcongressnepal?sslmode=require"
 
 	// Open the connection
 	var err error

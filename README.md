@@ -5,3 +5,5 @@ Shift+Alt+F (for Code Formatter)
 "postgresql://youthcongressnepal:K0A4IsjH4s15z6pLOIyuAw@chetanbudathoki-7078.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/youthcongressnepal?sslmode=verify-full"
 
 K0A4IsjH4s15z6pLOIyuAw
+
+git push origin 78f004cb32e6a4802ef3cbe9e43b0c7bada17ebe --force
