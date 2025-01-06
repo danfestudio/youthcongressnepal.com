@@ -69,22 +69,22 @@
 							<p></p>
 
 							<form id="register-form" name="register-form" class="row" action="/register" method="post">
-								<div class="col-3 form-group"> 
+								<div class="col-12 form-group"> 
 									<label for="first_name">First Name:</label>
 									<input type="text" id="first_name" name="first_name" class="form-control" required>
 								</div>
 							
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="last_name">Last Name:</label>
 									<input type="text" id="last_name" name="last_name" class="form-control" required>
 								</div>
 							
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="middle_name">Middle Name:</label>
 									<input type="text" id="middle_name" name="middle_name" class="form-control">
 								</div>
 							
-								<div class="col-6 form-group">
+								<div class="col-12 form-group">
 									<label for="email_id">Email Address:</label>
 									<input type="email" id="email_id" name="email_id" class="form-control" required 
 										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
@@ -94,7 +94,7 @@
 							
 								<div class="w-100"></div>
 							
-								<div class="col-4 form-group">
+								<div class="col-12 form-group">
 									<label for="mobile_number">Mobile Number:</label>
 									<input type="text" id="mobile_number" name="mobile_number" class="form-control" required 
 										pattern="\d{10}" title="Please enter a valid 10-digit mobile number.">
@@ -103,7 +103,7 @@
 
 								<div class="w-100"></div>							
 
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="gender">Gender:</label>
 									<select id="gender" name="gender" class="form-control" required>
 										<option value="Male">Male</option>
@@ -112,7 +112,7 @@
 									</select>
 								</div>					
 															
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="blood_group">Blood Group:</label>
 									<select id="blood_group" name="blood_group" class="form-control" required>
 										<option value="A+">A+</option>
@@ -126,7 +126,7 @@
 									</select>
 								</div>
 
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="dob">Date of Birth (AD):</label>
 									<input type="date" 
 										id="dob" 
@@ -144,28 +144,28 @@
 									<label for="permanent_tole">Permanent Location:</label>									
 								</div>
 
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="permanent_district">District:</label>
 									<select id="permanent_district" name="permanent_district" class="form-control" required>
 										<option value="" disabled selected>Select your district</option>
 									</select>
 								</div>
 							
-								<div class="col-4 form-group">
+								<div class="col-12 form-group">
 									<label for="permanent_palika">Palika:</label>
 									<select id="permanent_palika" name="permanent_palika" class="form-control" required disabled>
 										<option value="" disabled selected>Select your palika</option>
 									</select>
 								</div>
 							
-								<div class="col-2 form-group">
+								<div class="col-12 form-group">
 									<label for="permanent_wada">Ward Number:</label>
 									<select id="permanent_wada" name="permanent_wada" class="form-control" required disabled>
 										<option value="" disabled selected>Select your ward</option>
 									</select>
 								</div>
 							
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="permanent_tole">Tole:</label>
 									<input 
 										type="text" 
@@ -183,28 +183,28 @@
 									<p>You can skip temporary location, if you are currently staying in your permanent<p>								
 								</div>
 								<!-- Temporary Address -->								
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="temporary_district">District:</label>
 									<select id="temporary_district" name="temporary_district" class="form-control">
 										<option value="" disabled selected>Select your district</option>
 									</select>
 								</div>
 								
-								<div class="col-4 form-group">
+								<div class="col-12 form-group">
 									<label for="temporary_palika">Palika:</label>
 									<select id="temporary_palika" name="temporary_palika" class="form-control" disabled>
 										<option value="" disabled selected>Select your palika</option>
 									</select>
 								</div>
 								
-								<div class="col-2 form-group">
+								<div class="col-12 form-group">
 									<label for="temporary_wada">Ward:</label>
 									<select id="temporary_wada" name="temporary_wada" class="form-control" disabled>
 										<option value="" disabled selected>Select your ward</option>
 									</select>
 								</div>
 								
-								<div class="col-3 form-group">
+								<div class="col-12 form-group">
 									<label for="temporary_tole">Tole:</label>
 									<input 
 										type="text" 
@@ -213,28 +213,21 @@
 										class="form-control" 
 										placeholder="Your tole" 
 										disabled>
-								</div>
-								
+								</div>								
 							
 								<div class="divider divider-border divider-center"><i class="icon-email2"></i></div>   
 
 								<div class="col-12 center">
 									<p>In case of any technical issues while submitting the registration form, feel free to call 9851152925.</p>
-								</div>						                            
-							
-								<div class="col-4"></div>
+								</div>	
 
-								<div class="col-4 col-lg-auto">
+								<div class="col-8 col-lg-auto">
 									<button type="submit" class="button button-reveal button-large button-circle text-right">
 										<i class="icon-angle-right"></i>
 										<span>Submit your registration form</span>
 									</button>
-								</div>
-
-								<div class="col-4"></div>
-								
-							</form>
-							
+								</div>							
+							</form>					
 
 						</div>
 
@@ -242,7 +235,7 @@
 
 				</div>
 			</div>
-		</section><!-- #content end -->
+		</section>
 
 		<div id="footer"></div>
 
