@@ -24,7 +24,7 @@ jobs:
           port: 22
 
           script: |
-            cd /home/cb/projects/youthcongress.org.np || exit 1            
+            cd /home/cb/projects/danfestudio/youthcongress.org.np || exit 1            
             docker build -t youthcongressnepal .
             docker stop youthcongress.org.np || true
             docker rm youthcongress.org.np || true
